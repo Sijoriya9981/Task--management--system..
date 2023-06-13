@@ -1,0 +1,22 @@
+<?php   
+  include('../connect.php');
+  $query2 = "Delete from task   where tid =$_GET[id]";
+  $query2_run = mysqli_query($con,$query2);
+  if(($query2_run))
+  {
+    echo "  <script  type='text/javascript'>  
+    alert('Delete successfully..');
+
+    window.location.href = 'admindashboard.php';
+    
+    </script>";
+  }
+  else{                                                       
+    echo "  <script  type='text/javascript'>  
+     alert('Something went wrong..... try again');
+     window.location.href = 'managetask.php';
+     
+     </script>";
+   
+   }  
+?>
